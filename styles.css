@@ -1,0 +1,228 @@
+:root {
+    --bg-color: #1a1e24;
+    --sidebar-bg: #252a33;
+    --content-bg: #1f252b;
+    --text-color: #e6ecef;
+    --accent-color: #3b82f6;
+    --hover-color: #60a5fa;
+    --border-color: #374151;
+}
+
+[data-theme="light"] {
+    --bg-color: #f1f5f9;
+    --sidebar-bg: #ffffff;
+    --content-bg: #f8fafc;
+    --text-color: #1f2a44;
+    --accent-color: #22c55e;
+    --hover-color: #4ade80;
+    --border-color: #d1d5db;
+}
+
+[data-theme="easter"] {
+    --bg-color: #2b2536;
+    --sidebar-bg: #3a3149;
+    --content-bg: #322b3f;
+    --text-color: #e6d9ff;
+    --accent-color: #a78bfa;
+    --hover-color: #c4b5fd;
+    --border-color: #6b5b95;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 200px;
+    background: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 16px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.nav-item {
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    font-size: 15px;
+    transition: background 0.2s ease;
+}
+
+.nav-item:hover {
+    background: var(--hover-color);
+}
+
+.nav-item.active {
+    background: var(--accent-color);
+    color: #ffffff;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.titlebar {
+    height: 36px;
+    background: var(--sidebar-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    -webkit-app-region: drag;
+}
+
+.title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.controls {
+    display: flex;
+    gap: 6px;
+    -webkit-app-region: no-drag;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 12px;
+    cursor: pointer;
+    padding: 6px;
+    transition: background 0.2s ease;
+}
+
+.controls button:hover {
+    background: var(--hover-color);
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    background: var(--content-bg);
+    overflow-y: auto;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 16px;
+    color: var(--text-color);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    margin: 10px 0 4px;
+    color: var(--text-color);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+input, select {
+    width: 100%;
+    max-width: 340px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: var(--sidebar-bg);
+    color: var(--text-color);
+    font-size: 13px;
+    transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+button {
+    width: 100%;
+    max-width: 340px;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background: var(--accent-color);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: var(--hover-color);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.button-group button {
+    flex: 1;
+}
+
+#minecraft-dir {
+    margin: 10px 0;
+    color: var(--text-color);
+    font-size: 13px;
+    background: var(--sidebar-bg);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+#status {
+    margin-top: 12px;
+    color: var(--text-color);
+    font-size: 13px;
+}
+
+progress {
+    width: 100%;
+    max-width: 340px;
+    height: 6px;
+    margin-top: 10px;
+    border-radius: 3px;
+    background: var(--border-color);
+}
+
+progress::-webkit-progress-bar {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+progress::-webkit-progress-value {
+    background: var(--accent-color);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}

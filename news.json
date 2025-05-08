@@ -1,0 +1,14 @@
+{
+  "news": [
+    {
+      "title": "Welcome to FelisLauncher!",
+      "content": "We are excited to launch the new version of FelisLauncher with improved features.",
+      "date": "2025-05-08"
+    },
+    {
+      "title": "New Update Released",
+      "content": "Version 0.0.2 brings better performance and mod support.",
+      "date": "2025-05-09"
+    }
+  ]
+}

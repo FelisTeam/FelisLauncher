@@ -1,0 +1,60 @@
+{
+  "name": "felis-launcher",
+  "version": "0.0.1",
+  "description": "Modern FelisLauncher for Minecraft with online/offline modes",
+  "main": "main.js",
+  "scripts": {
+    "start": "node_modules\\.bin\\electron .",
+    "build": "electron-builder --win --x64 --cache C:\\Users\\Кирилл\\AppData\\Local\\electron-builder\\Cache",
+    "publish": "electron-builder --win --x64 --publish always"
+  },
+  "author": "FelisTeam",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^23.0.0",
+    "electron-builder": "^25.0.5",
+    "electron-updater": "^6.1.7"
+  },
+  "dependencies": {
+    "minecraft-launcher-core": "^3.17.1",
+    "axios": "^1.6.0",
+    "fs-extra": "^11.1.0",
+    "electron-log": "^5.0.0",
+    "electron-store": "^8.1.0",
+    "crypto-js": "^4.2.0"
+  },
+  "build": {
+    "appId": "com.felislauncher.app",
+    "productName": "FelisLauncher",
+    "win": {
+      "target": "portable",
+      "icon": "icon.ico",
+      "sign": false
+    },
+    "files": [
+      "main.js",
+      "renderer.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "icon.ico",
+      "logo.png",
+      "node_modules/minecraft-launcher-core/lib/**/*",
+      "!node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!dist",
+      "!build",
+      "!*.log"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "FelisTeam",
+        "repo": "FelisLauncher",
+        "releaseType": "release"
+      }
+    ]
+  }
+}
